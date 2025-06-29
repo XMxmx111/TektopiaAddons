@@ -7,6 +7,7 @@ import com.leviathanstudio.craftstudio.client.util.EnumResourceType;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockOre;
+import net.minecraft.init.Items;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Loader;
@@ -192,6 +193,8 @@ public class TektopiaAddons {
 		LOGGER.info("Found " + gemItems.size() + " gems");
 		LOGGER.info("Found " + ingotItems.size() + " ingots");
 
+
+		OreDictionary.registerOre("coal", Items.COAL);
 
 		Collection<Block> blocks = ForgeRegistries.BLOCKS.getValuesCollection();
 		for(Block block : blocks)

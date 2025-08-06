@@ -38,8 +38,10 @@ public abstract class EntityAIMiningMixin extends EntityAIMoveToBlock {
      */
     @Overwrite(remap = false)
     private void mineBlock(BlockPos minePos, int skillChance) {
-        boolean dropBlock = VillageStructureMineshaft.isOre(this.villager.world, minePos) || this.villager.isAIFilterEnabled("mining.stone");
-        if (this.villager.world.getBlockState(minePos).getBlock() == Blocks.STONE) {
+        int skill = this.villager.getSkill(ProfessionType.MINER);
+        boolean dropStone = this.villager.isAIFilterEnabled("mining.stone") && stoneDropCheck(skill);
+        boolean dropBlock = VillageStructureMineshaft.isOre(this.villager.world, minePos) || dropStone;
+        if (this.villager.world.getBlockState(minePos).getBlock() == Blocks.STONE && !dropStone) {
             this.tryBonusOre(this.villager);
         }
 
@@ -52,5 +54,9 @@ public abstract class EntityAIMiningMixin extends EntityAIMoveToBlock {
         }
 
         this.villager.addJob(new TickJob(20, 0, false, () -> this.villager.pickupItems(4)));
+    }
+
+    private boolean stoneDropCheck(int skill) {
+        return this.villager.getRNG().nextInt(5) == 0;
     }
 }

@@ -1,5 +1,6 @@
 package com.sushiy.tektopiaaddons.mixin;
 
+import com.sushiy.tektopiaaddons.ConfigHandler;
 import com.sushiy.tektopiaaddons.TektopiaAddons;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -63,6 +64,7 @@ public abstract class EntityMinerMixin extends EntityVillagerTek {
 
     @Inject(method = "entityInit", at = @At("TAIL"), remap = false)
     protected void entityInit(CallbackInfo ci) {
+        if (!ConfigHandler.VILLAGER_STONE_SUPPORT_ENABLE) return;
         this.registerAIFilter("mining.stone", MINE_STONE);
     }
 
@@ -86,6 +88,7 @@ public abstract class EntityMinerMixin extends EntityVillagerTek {
 
             this.getDesireSet().addItemDesire(new ItemDesire(item, 0, 0, 5, (Predicate) null));
         }
+        if (!ConfigHandler.VILLAGER_STONE_SUPPORT_ENABLE) return;
         for(Block block : TektopiaAddons.stoneBlocks)
         {
             this.getDesireSet().addItemDesire(new ItemDesire(Item.getItemFromBlock(block), 1, 10, 64, (Predicate) null));
@@ -99,6 +102,7 @@ public abstract class EntityMinerMixin extends EntityVillagerTek {
 
     @Inject(method = "buildCraftSet", at = @At("RETURN"), cancellable = true, remap = false)
     private static void buildCraftSetInject(CallbackInfoReturnable<List<Recipe>> cir) {
+        if (!ConfigHandler.VILLAGER_STONE_SUPPORT_ENABLE) return;
         List<Recipe> recipes = new ArrayList();
         List<ItemStack> ingredients = new ArrayList();
         ingredients.add(new ItemStack(Item.getItemFromBlock(Blocks.COBBLESTONE), 3));

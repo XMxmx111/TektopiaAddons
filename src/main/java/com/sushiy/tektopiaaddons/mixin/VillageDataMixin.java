@@ -1,5 +1,6 @@
 package com.sushiy.tektopiaaddons.mixin;
 
+import com.sushiy.tektopiaaddons.ConfigHandler;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.tangotek.tektopia.ProfessionType;
@@ -28,6 +29,7 @@ public abstract class VillageDataMixin {
             remap = false
     )
     private void initEconomyInject(CallbackInfo ci) {
+        if (!ConfigHandler.VILLAGER_STONE_SUPPORT_ENABLE) return;
         this.economy.addItem(new ItemValue(new ItemStack(Blocks.COBBLESTONE, 64), 4, 22, ProfessionType.MINER));
     }
 }

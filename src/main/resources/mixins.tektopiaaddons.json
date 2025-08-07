@@ -18,6 +18,8 @@
     "EntityVillagerTekMixin",
     "ModEntititiesMixin",
     "StructureVillagePiecesMixin",
+    "TekHouse2bMixin",
+    "TekHouse6Mixin",
     "TekVillagerMixin",
     "VillageStructureBlacksmithMixin",
     "VillageStructureMerchantStallMixin"

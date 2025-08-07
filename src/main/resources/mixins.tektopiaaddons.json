@@ -25,6 +25,8 @@
     "ModEntititiesMixin",
     "RecipeMixin",
     "StructureVillagePiecesMixin",
+    "TekHouse2bMixin",
+    "TekHouse6Mixin",
     "TekVillagerMixin",
     "VillageDataMixin",
     "VillageMixin",

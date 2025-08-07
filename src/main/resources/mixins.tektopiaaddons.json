@@ -24,6 +24,7 @@
     "ItemValueMixin",
     "ModEntititiesMixin",
     "RecipeMixin",
+    "StructureVillagePiecesMixin",
     "TekVillagerMixin",
     "VillageDataMixin",
     "VillageMixin",

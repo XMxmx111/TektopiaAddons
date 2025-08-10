@@ -17,6 +17,7 @@ public final class RegistrationHandler {
 
     @SubscribeEvent
     public static void onRegisterRecipes(RegistryEvent.Register<IRecipe> event) {
+        if (!ConfigHandler.BASIC_PROFESSION_TOKEN_CRAFTING) return;
         GameRegistry.addShapelessRecipe(
                 new ResourceLocation(TekVillager.MODID, "profession_farmer"),
                 null,

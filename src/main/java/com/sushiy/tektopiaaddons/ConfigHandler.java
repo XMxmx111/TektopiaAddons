@@ -32,6 +32,8 @@ public class ConfigHandler {
 
     public static String[] MONSTER_IGNORE_LIST;
     public static String[] MONSTER_IGNORE_LIST_DEFAULT = {"Witch", "Enderman"};
+    public static boolean CHALLENGING_VILLAGE_START_ENABLED = false;
+    public static boolean BASIC_PROFESSION_TOKEN_CRAFTING = false;
 
     public static void init(File file)
     {
@@ -47,6 +49,8 @@ public class ConfigHandler {
       
         VILLAGE_HARDCORE_MODE_ENABLED = config.getBoolean("Enable Village Hardcore Mode", category, false, "More types of monsters will attack villagers");
         VILLAGER_STONE_SUPPORT_ENABLE = config.getBoolean("Enable villager stone support", category, true, "Allow villagers to obtain and use stone resources and tools");
+        CHALLENGING_VILLAGE_START_ENABLED = config.getBoolean("Enable challenging village start", category, false, "Reduces initial village size when enabled");
+        BASIC_PROFESSION_TOKEN_CRAFTING = config.getBoolean("Allow crafting for basic profession tokens", category, false, "Enables crafting recipes for Farmer, Lumberjack, Miner, and Guard tokens");
 
 
         category = "Food";

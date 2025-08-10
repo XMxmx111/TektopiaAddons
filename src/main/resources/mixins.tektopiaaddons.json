@@ -23,6 +23,7 @@
     "TekHouse2HandlerMixin",
     "TekHouse6HandlerMixin",
     "TekHouse6Mixin",
+    "TekStructureVillagePiecesMixin",
     "TekVillagerMixin",
     "VillageStructureBlacksmithMixin",
     "VillageStructureMerchantStallMixin"

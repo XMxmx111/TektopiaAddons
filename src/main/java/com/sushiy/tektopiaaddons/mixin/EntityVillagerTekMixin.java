@@ -1,7 +1,6 @@
 package com.sushiy.tektopiaaddons.mixin;
-import com.leviathanstudio.craftstudio.common.animation.AnimationHandler;
+import com.sushiy.tektopiaaddons.ConfigHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.*;
 import net.minecraft.world.World;
 import net.tangotek.tektopia.entities.EntityNecromancer;
@@ -23,6 +22,7 @@ public abstract class EntityVillagerTekMixin extends EntityVillageNavigator
      */
     @Overwrite(remap = false)
     public com.google.common.base.Predicate<Entity> isHostile() {
-        return (e) -> e.isCreatureType(EnumCreatureType.MONSTER, false) || e instanceof EntityZombie && !(e instanceof EntityPigZombie) || e instanceof EntityWitherSkeleton || e instanceof EntityEvoker || e instanceof EntityVex || e instanceof EntityVindicator || e instanceof EntityNecromancer;
+        return (e) -> ConfigHandler.VILLAGE_HARDCORE_MODE_ENABLED && IMob.VISIBLE_MOB_SELECTOR.apply(e) && !(e instanceof EntityCreeper)
+                || e instanceof EntityZombie && !(e instanceof EntityPigZombie) || e instanceof EntityWitherSkeleton || e instanceof EntityEvoker || e instanceof EntityVex || e instanceof EntityVindicator || e instanceof EntityNecromancer;
     }
 }

@@ -25,6 +25,7 @@
     "TekHouse6Mixin",
     "TekStructureVillagePiecesMixin",
     "TekVillagerMixin",
+    "VillageDataMixin",
     "VillageStructureBlacksmithMixin",
     "VillageStructureMerchantStallMixin"
   ],

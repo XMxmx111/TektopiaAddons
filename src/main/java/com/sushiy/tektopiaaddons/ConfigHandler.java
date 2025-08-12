@@ -29,6 +29,7 @@ public class ConfigHandler {
     public static boolean VILLAGE_HARDCORE_MODE_ENABLED = false;
     public static boolean CHALLENGING_VILLAGE_START_ENABLED = false;
     public static boolean BASIC_PROFESSION_TOKEN_CRAFTING = false;
+    public static boolean VILLAGER_STONE_SUPPORT_ENABLE = false;
 
     public static void init(File file)
     {
@@ -44,6 +45,7 @@ public class ConfigHandler {
         VILLAGE_HARDCORE_MODE_ENABLED = config.getBoolean("Enable Village Hardcore Mode", category, false, "More types of monsters will attack villagers");
         CHALLENGING_VILLAGE_START_ENABLED = config.getBoolean("Enable challenging village start", category, false, "Reduces initial village size when enabled");
         BASIC_PROFESSION_TOKEN_CRAFTING = config.getBoolean("Allow crafting for basic profession tokens", category, false, "Enables crafting recipes for Farmer, Lumberjack, Miner, and Guard tokens");
+        VILLAGER_STONE_SUPPORT_ENABLE = config.getBoolean("Enable villager stone support", category, false, "Allow villagers to obtain and use stone resources and tools");
 
 
         category = "Food";

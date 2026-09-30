@@ -1,5 +1,4 @@
 package com.sushiy.tektopiaaddons.mixin;
-
 import com.sushiy.tektopiaaddons.IOreFinderVillage;
 import com.sushiy.tektopiaaddons.oredictfinder.OreDictFinder;
 import com.sushiy.tektopiaaddons.oredictfinder.SaplingOreScanner;

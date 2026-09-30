@@ -108,6 +108,7 @@ public abstract class EntityMinerMixin extends EntityVillagerTek {
     private static void buildCraftSetInject(CallbackInfoReturnable<List<Recipe>> cir) {
         if (!ConfigHandler.VILLAGER_STONE_SUPPORT_ENABLE) return;
         List<Recipe> recipes = new ArrayList<>();
+
         List<Object> ingredients = new ArrayList<>();
         ingredients.add(new OreDictStack("cobblestone", 3));
         ingredients.add(new OreDictStack("logWood"));

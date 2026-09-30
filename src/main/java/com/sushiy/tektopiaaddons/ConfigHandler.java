@@ -28,7 +28,7 @@ public class ConfigHandler {
     public static boolean NEW_PLAYERS_RECEIVE_STARTERBOOK = false;
   
     public static boolean VILLAGE_HARDCORE_MODE_ENABLED = false;
-    public static boolean VILLAGER_STONE_SUPPORT_ENABLE = false;
+    public static boolean VILLAGER_STONE_SUPPORT_ENABLE = true;
 
     public static String[] MONSTER_IGNORE_LIST;
     public static String[] MONSTER_IGNORE_LIST_DEFAULT = {"Witch", "Enderman"};
@@ -46,7 +46,7 @@ public class ConfigHandler {
         NEW_PLAYERS_RECEIVE_STARTERBOOK = config.getBoolean("Should new players get a starterbook", category, false, "");
       
         VILLAGE_HARDCORE_MODE_ENABLED = config.getBoolean("Enable Village Hardcore Mode", category, false, "More types of monsters will attack villagers");
-        VILLAGER_STONE_SUPPORT_ENABLE = config.getBoolean("Enable villager stone support", category, false, "Allow villagers to obtain and use stone resources and tools");
+        VILLAGER_STONE_SUPPORT_ENABLE = config.getBoolean("Enable villager stone support", category, true, "Allow villagers to obtain and use stone resources and tools");
 
 
         category = "Food";

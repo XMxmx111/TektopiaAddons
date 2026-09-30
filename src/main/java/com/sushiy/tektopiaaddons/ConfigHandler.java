@@ -74,6 +74,9 @@ public class ConfigHandler {
         category = "Mining";
         MODDED_ORE_REGROW_CHANCE = config.getStringList("Modded ores regrow chance", category, MODDED_ORE_REGROW_CHANCE_DEFAULT, "Format: \"<oreName>:<integer value>\". Higher number is more likely to be found");
 
+        category = "Combat";
+        MONSTER_IGNORE_LIST = config.getStringList("Ignored Monsters List", category, MONSTER_IGNORE_LIST_DEFAULT, "Format: \"<monster_entity_name>\" This is the normal name in CamelCase. Typical: Skeleton, WitherSkeleton, Enderman, Spider, Zombie, etc.");
+
         config.save();
     }
 

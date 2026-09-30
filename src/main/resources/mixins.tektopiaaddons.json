@@ -5,17 +5,23 @@
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BlockBaseGardeMixin",
+    "BlockBaseGardenMixin",
+    "EntityAIChopTreeMixin",
     "EntityAIEatFoodMixin",
     "EntityAIHarvestFarmMixin",
     "EntityAIMiningMixin",
     "EntityAiPlantFarmMixin",
     "EntityBlacksmithMixin",
+    "EntityButcherMixin",
+    "EntityChefMixin",
     "EntityFarmerMixin",
     "EntityGuardMixin",
+    "EntityLumberjackMixin",
     "EntityMerchantMixin",
     "EntityMinerMixin",
     "EntityVillagerTekMixin",
+    "ItemDesireSetMixin",
+    "ItemValueMixin",
     "ModEntititiesMixin",
     "StructureVillagePiecesMixin",
     "TekHouse2bHandlerMixin",
@@ -25,10 +31,13 @@
     "TekHouse6Mixin",
     "TekStructureVillagePiecesMixin",
     "TekVillagerMixin",
+    "VillageDataMixin",
+    "VillageMixin",
     "VillageStructureBlacksmithMixin",
     "VillageStructureMerchantStallMixin"
   ],
   "client": [
+    "LayerVillagerHeldItemMixin",
     "RenderGuardMixin",
     "RenderVillagerMixin"
   ]
